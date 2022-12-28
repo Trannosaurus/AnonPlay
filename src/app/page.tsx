@@ -6,14 +6,14 @@ const Home = () => {
         
     return (
     <>
-        <div> Goto
-            <a href="https://www1.gogoanime.ar/"></a>
-            and choose out an episode to watch, then paste it's link into the 
-            episode url field and start watching!
-            <br/>
-            P.S. use an adblocker
-        </div>
-        <div className="w-screen flex items-center justify-center h-screen ">
+        <div className="w-screen flex flex-col items-center justify-center space-y-14 h-screen ">
+            <div className="w-1/2"> Goto
+                <a className="text-blue-400" href="https://www1.gogoanime.ar/">https://www1.gogoanime.ar/</a>
+                and choose out an episode to watch, then paste it's link into the 
+                episode url field and start watching!
+                <br/>
+                P.S. use an adblocker
+            </div>
             <CreateRoomForm />
         </div>
     </>
