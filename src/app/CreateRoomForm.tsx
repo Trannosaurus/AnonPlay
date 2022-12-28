@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from 'next/link'
 import useSWR from 'swr'
+import crypto from 'crypto'
 
 const fetcher = async (url: any) => {
     const res = await fetch(url)
