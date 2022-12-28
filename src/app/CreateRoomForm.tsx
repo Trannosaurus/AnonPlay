@@ -33,6 +33,7 @@ export default function CreateRoomForm() {
 
     useEffect(() => {
         if(src){
+            // @ts-ignore
             myLink.current.click();
         }
     })
