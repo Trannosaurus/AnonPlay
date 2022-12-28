@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from 'next/link'
 import useSWR from 'swr'
-import crypto from 'crypto'
+import {v4} from 'uuid'
 
 const fetcher = async (url: any) => {
     const res = await fetch(url)
@@ -78,7 +78,7 @@ export default function CreateRoomForm() {
                     className="hidden"
                     ref={myLink}
                     href={{
-                        pathname: `/${crypto.randomUUID()}`,
+                        pathname: `/${v4()}`,
                         query: {
                             name: `${name}`,
                             src: `${src}`,
