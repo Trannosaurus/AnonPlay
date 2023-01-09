@@ -22,7 +22,7 @@ export default function RoomPage({params}: {params: any}){
     const [onlineUsers, setOnlineUsers] = useState<string[]>([])
 
     const clientPusher = new ClientPusher(
-        '7808c3403c700488c5a2',
+        process.env.NEXT_PUBLIC_key!,
         {
             authEndpoint: "api/pusher/auth",
             cluster: 'mt1',
