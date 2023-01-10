@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@types/pusher-js": "^5.1.0",
+    "axios": "^1.2.2",
     "dotenv": "^16.0.3",
     "encoding": "^0.1.13",
     "next": "latest",

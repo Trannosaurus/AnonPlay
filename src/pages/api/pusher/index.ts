@@ -6,12 +6,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-    const {message, username} = req.body;
+    const {message, username, roomid} = req.body;
+    console.log("roomid: " + roomid)
 
-    await pusher.trigger('presence-channel', 'chat-update', {
+    await pusher.trigger('presence-' + roomid, 'chat-update', {
         message,
         username
     })
 
     res.json({status: 200});
+
 }

@@ -10,10 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-    if( req.method ! == 'POST'){
-        res.status(405).json({name: "Method Not Allowed"});
-    }
-    const { socket_id, channel_name, name} = req.body
+    const { socket_id, channel_name, username} = req.body
 
     const randomString = Math.random().toString(36).slice(2);
 
@@ -23,12 +20,13 @@ export default async function handler(
         // user_id: user_id,
         user_id: randomString,
         user_info: {
-            name
+            username
         }
     }
 
     try {
-        const auth = pusher.authorizeChannel(socket_id, channel_name, presenceData)
+        const auth = pusher.authorizeChannel(socket_id, channel_name, presenceData);
+        res.send(auth);
     } catch (error) {
         console.log(error)
     }
