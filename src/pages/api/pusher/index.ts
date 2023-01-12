@@ -7,7 +7,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
     const {message, username, roomid} = req.body;
-    console.log("roomid: " + roomid)
 
     await pusher.trigger('presence-' + roomid, 'chat-update', {
         message,

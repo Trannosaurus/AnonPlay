@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@hyperbeam/web": "^0.0.24",
     "@types/pusher-js": "^5.1.0",
     "axios": "^1.2.2",
     "dotenv": "^16.0.3",
