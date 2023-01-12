@@ -46,7 +46,7 @@ export default function Stream() {
 
     return(
     <div className="w-full">
-        <iframe className="w-full aspect-video" src="https://1n3gz1hpcnqdu0d7un7mi7olf.hyperbeam.com/qPJNvxlDQ62by7zJhuFnjw?token=YSQY4f-IKXgmyuKnvN0oNk_VZ1eUJOAFW5GnMxPSOFE"></iframe>
+        <iframe className="w-full aspect-video" src="https://6vfprhd2zq392od50gh7j0b10.hyperbeam.com/WASv0xULRJmhhP0PlqD8Ng?token=1DktEDjDRB-olCk018oa87aSKAaRNa96DMHxmoL3llM"></iframe>
     </div>
 
     )
