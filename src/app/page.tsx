@@ -78,7 +78,7 @@ const Home = () => {
         </motion.div>
 
         <motion.div
-            className="absolute max-w-7xl text-left"
+            className="absolute max-w-6xl text-center"
             initial={{opacity: 0, x: -10000}}
             animate={welcomeControls}
         >Welcome to AnonPlay where you can watch anything with your friends
