@@ -32,16 +32,16 @@ const Home = () => {
          * we have passed the opening animation and can skip this */
 
         const sequence = async () => {
-            /* await helloControls.start({opacity: 1, transition: {delay: 1, duration: 1}})
+            await helloControls.start({x: 0, transition:{delay: 0}})
+            await helloControls.start({opacity: 1, transition: {delay: 1, duration: 1}})
             await helloControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } })
-            await welcomeControls.start({opacity: 1, transition: {delay: .5, duration: 2}})
-            await welcomeControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } }) */
+
+            await welcomeControls.start({x: 0, transition:{delay: 0}})
+            await welcomeControls.start({opacity: 1, transition: {delay: 1, duration: 2}})
+            await welcomeControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } })
 
             await nameControls.start({x: 0, transition:{delay: 0}})
             await nameControls.start({opacity: 1, transition: {delay: .5, duration: 2}})
-
-            // await optionsControls.start({opacity: 1, transition: {delay: .5, duration: 2}})
-            // await formControls.start({opacity: 1, transition: {delay: 1, duration: 2}})
         }
         sequence()
     })
@@ -78,7 +78,7 @@ const Home = () => {
         </motion.div>
 
         <motion.div
-            className="absolute"
+            className="absolute max-w-7xl text-left"
             initial={{opacity: 0, x: -10000}}
             animate={welcomeControls}
         >Welcome to AnonPlay where you can watch anything with your friends
