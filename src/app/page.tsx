@@ -66,7 +66,6 @@ const Home = () => {
                     await maxControls.start({x: 0, transition:{delay: 0}})
                     await maxControls.start({opacity: 1, transition: {duration: 1}})
                     return null;
-
                 }else{
                     return response.json()
                 }
@@ -93,9 +92,19 @@ const Home = () => {
             body: JSON.stringify({roomid: roomidRef.current.value,})
         }
         )
-        console.log(data)
+            .then(async response => {
+                if(response.status === 500){
+                    //return invalid roomid
+                    //return null
+                }else{
+                    return response.json();
+                }
+            })
+        if (!data) return
+        const {session_id, embed_url} = data;
         await joinControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } })
-        setPath(roomidRef.current.value)
+        setURL(embed_url);
+        setPath(session_id);
     }
   return (
     <div className="text-6xl flex items-center justify-center h-screen">
