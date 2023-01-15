@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import {AnalyticsWrapper } from './analytics'
 
 export default function RootLayout({
     children,
@@ -10,6 +11,7 @@ export default function RootLayout({
             <head></head>
             <body >
                 {children}
+                <AnalyticsWrapper />
             </body>
         </html>
     )
