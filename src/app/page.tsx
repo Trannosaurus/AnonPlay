@@ -12,6 +12,7 @@ const Home = () => {
     const roomidRef = useRef<any>();
     const [name, setName] = useState("");
     const [path, setPath] = useState("");
+    const [embed_url, setURL] = useState("");
     const linkRef = useRef<any>();
 
     const helloControls = useAnimationControls()
@@ -19,6 +20,7 @@ const Home = () => {
     const nameControls = useAnimationControls()
     const optionsControls = useAnimationControls()
     const joinControls = useAnimationControls()
+    const maxControls = useAnimationControls()
 
     useEffect(() => {
         if( path && name) {
@@ -57,7 +59,26 @@ const Home = () => {
 
     const handleCreate = async () => {
         await optionsControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } })
-        setPath(v4())
+        const data = await fetch("/api/hyperbeam")
+            .then(async response => {
+                if(response.status === 500){
+                    console.log("at max capacity")
+                    await maxControls.start({x: 0, transition:{delay: 0}})
+                    await maxControls.start({opacity: 1, transition: {duration: 1}})
+                    return null;
+
+                }else{
+                    return response.json()
+                }
+            })
+            .catch(async error => {
+            })
+        if(!data) return
+        const {session_id, embed_url} = data;
+        console.log("embed_rul : " + embed_url);
+        console.log("session_id" + session_id);
+        setURL(embed_url);
+        setPath(session_id);
     }
     const handleJoin = async () => {
         await optionsControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } })
@@ -66,10 +87,26 @@ const Home = () => {
     }
     const handleJoinRoom = async (e: any) => {
         e.preventDefault()
+        const data = await fetch("/api/hyperbeam",
+        {
+            method: 'POST',
+            body: JSON.stringify({roomid: roomidRef.current.value,})
+        }
+        )
+        console.log(data)
+        await joinControls.start({ opacity: 0, transition: { delay: .5, duration: 1 } })
         setPath(roomidRef.current.value)
     }
   return (
     <div className="text-6xl flex items-center justify-center h-screen">
+        <motion.div
+            className="absolute max-w-6xl text-center"
+            initial={{opacity: 0, x: -10000}}
+            animate={maxControls}
+        >Our servers are at maximum capacity, please try again later. 
+        Sorry for the inconvienece
+        </motion.div>
+
         <motion.div
             className="absolute"
             initial={{opacity: 0, x: -10000}}
@@ -133,7 +170,8 @@ const Home = () => {
         href={{
             pathname:`${path}`,
             query: {
-                username: `${name}`
+                username: `${name}`,
+                embed_url: `${embed_url}`
             }
         }}
         >

@@ -10,11 +10,12 @@ export default function RoomPage({params}: {params: any}){
     const searchParams = useSearchParams()
     const roomid = params.roomid;
     const username = searchParams.get('username');
-    console.log("USERNAME>>>"+username)
+    const url = searchParams.get('embed_url');
+    console.log("URL>>>" + url)
 
     return <>
         <div className="flex w-screen h-screen items-center justify-center space-around">
-        <Stream />
+        <Stream url={url}/>
         <Chat roomid={roomid} username={username}/>
         </div>
     </>

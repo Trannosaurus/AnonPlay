@@ -1,32 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import axios from 'axios'
-let computer: any;
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-    console.log("inside hyperbeam")
-    if(computer){
-        res.send(computer);
-        return;
+    try{
+        const body = JSON.parse(req.body)
+        const { roomid } = await body
+        console.log("joinging")
+        console.log("this is the id: " + roomid)
+    }catch{
+        console.log("creating room")
+        const resp = axios.post('https://engine.hyperbeam.com/v0/vm', {}, {
+            headers: {
+            'Authorization': `Bearer ${process.env.HB_API_KEY}`,
+        },
+        })
+        .then(response => res.status(200).json(response.data))
+        .catch(error => res.status(500).send(error))
     }
-    const resp = axios.post('https://engine.hyperbeam.com/v0/vm', {}, {
-      headers: {
-        'Authorization': 'Bearer process.env.HB_API_KEY',
-      },
-    })
-      .then(response => console.log(response.data))
-      .catch(error => console.error(error))
-
-    /* const resp = await axios.post(
-        "https://engine.hyperbeam.com/v0/vm",
-            {},
-        {
-            headers: { 'Authorization': `Bearer ${process.env.HB_API_KEY}` },
-        }
-    ); */
-    computer = resp;
-    res.send(computer);
 }

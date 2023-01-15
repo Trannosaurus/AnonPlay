@@ -1,12 +1,13 @@
 // 'use client'
 
-// import React, {useRef, useEffect, useState} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 /* import Hyperbeam from '@hyperbeam/web'
 import useSWR from "swr" */
 
 // const fetcher = (path: string) => fetch(`http://localhost:3000${path}`).then(res =>res.json())
 
-export default function Stream() {
+export default function Stream({url}:{url:any}) {
+    console.log(url)
     /* const cloudComputerDiv = useRef<HTMLDivElement>(null)
     const {data, error, isLoading}  =useSWR('/api/hyperbeam', fetcher)
     if(error) console.log("error")
@@ -46,7 +47,7 @@ export default function Stream() {
 
     return(
     <div className="w-4/5">
-        <iframe className="w-full aspect-video" src="https://1n3gz1hpcnqdu0d7un7mi7olf.hyperbeam.com/7o_SOVKbQeS01PkBBY6ioQ?token=hMMT8kvbef1y_tbmreYcqg2mBLQUegnUyL5jm3CxwWA"></iframe>
+        <iframe className="w-full aspect-video" src={url}></iframe>
     </div>
 
     )
