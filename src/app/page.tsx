@@ -35,14 +35,6 @@ export default function Home() {
         </p>
 
         <StreamButton/>
-        <AspectRatio  ratio={16 / 9}>
-          <Image
-            src={hero}
-            alt="Photo by Alvaro Pinot"
-            fill
-            className="rounded-md w-8/12 object-cover "
-          />
-        </AspectRatio>
 
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
