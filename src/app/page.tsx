@@ -7,6 +7,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import Image from "next/image"
+
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+
+import hero from '../../public/anonplay.png'
 
 import StreamButton from "./StreamButton"
 
@@ -18,7 +23,7 @@ export default function Home() {
       <div className="p-5 max-w-7xl flex-col justify-between items-center mx-auto w-full">
         <div className="w-2/3">
           <h1 className="animate-text text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-500 to-pink-600 mt-10 mb-4 scroll-m-20 text-4xl sm:text-2xl md:text-3xl font-extrabold tracking-tight lg:text-5xl">
-            Stream anything, anywhere with our app&aposs private rooms and cloud computer capabilities.
+            Stream anything, anywhere with our app&apos;s private rooms and cloud computer capabilities.
           </h1>
           <p className="text-xl text-slate-700 dark:text-slate-400">
             Experience seamless streaming of cloud computers in private rooms with our cutting-edge app, unlocking unlimited possibilities for watching anything, anytime, anywhere.
@@ -30,6 +35,14 @@ export default function Home() {
         </p>
 
         <StreamButton/>
+        <AspectRatio  ratio={16 / 9}>
+          <Image
+            src={hero}
+            alt="Photo by Alvaro Pinot"
+            fill
+            className="rounded-md w-8/12 object-cover "
+          />
+        </AspectRatio>
 
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
@@ -77,7 +90,7 @@ export default function Home() {
             <AccordionContent>
               <div className="w-2/3">
                 <blockquote className="border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200">
-                  A: Joining a room is easy! Simply enter your name and the room ID in the provided fields, and click the &quotJoin Room&quot button. Our app will connect you to your private room, and you can start streaming the cloud computer right away.
+                  A: Joining a room is easy! Simply enter your name and the room ID in the provided fields, and click the &quot;Join Room&quot; button. Our app will connect you to your private room, and you can start streaming the cloud computer right away.
                 </blockquote>
               </div>
             </AccordionContent>

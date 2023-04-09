@@ -62,10 +62,6 @@ export default function RootLayout({
                   </div>
                 </HoverCardContent>
               </HoverCard>
-
-
-              <Button variant="link">Home</Button>
-              <Button variant="link">About</Button>
             </nav>
 
             <div>
