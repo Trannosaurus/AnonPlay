@@ -5,8 +5,6 @@ import ClientPusher from 'pusher-js'
 import * as PusherTypes from 'pusher-js'
 
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
-import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
 
@@ -114,7 +112,7 @@ export default function Chat({ roomid, username }: { roomid: any, username: any 
                     {chats.map((chat, id) => {
                         if (chat.username === "bot") {
                             return (
-                                <p className="text-center m-2 text-gray-400">{chat.message}
+                                <p className="text-center m-2 text-gray-400" key={id}>{chat.message}
                                 </p>
                             )
                         }
@@ -131,7 +129,6 @@ export default function Chat({ roomid, username }: { roomid: any, username: any 
                     ${username === chat.username ? "bg-blue-400" : "bg-gray-600"}`}>
                                     <p>{chat.message}</p>
                                 </div>
-
                             </div>
                         )
 
