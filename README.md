@@ -2,6 +2,8 @@
 
 AnonPlay is a web application built with Next.js, Tailwind CSS, Pusher, and Hyperbeam. It enables users to join private rooms anonymously and establish peer-to-peer connections for built-in chat and cloud computer streaming. The app is designed to facilitate group watch parties, allowing users to collectively control and interact with a shared cloud computer.
 
+[![Screen Recording](./public/AnonPlay_thumbnail.png)](https://youtu.be/EV-pCsuu4W0)
+
 ## Features
 
 - Anonymous user authentication: Users can join private rooms without the need for registration or login.
