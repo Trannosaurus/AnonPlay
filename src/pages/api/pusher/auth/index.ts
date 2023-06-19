@@ -13,11 +13,9 @@ export default async function handler(
     const { socket_id, channel_name, username} = req.body
 
     const randomString = Math.random().toString(36).slice(2);
-
-    // const user_id = v4()
+    console.log("here")
 
     const presenceData = {
-        // user_id: user_id,
         user_id: randomString,
         user_info: {
             username
