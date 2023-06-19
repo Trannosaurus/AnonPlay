@@ -25,11 +25,11 @@ export default function Home() {
           <h1 className="animate-text text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-500 to-pink-600 mt-10 mb-4 scroll-m-20 text-4xl sm:text-2xl md:text-3xl font-extrabold tracking-tight lg:text-5xl">
             Stream anything, anywhere with our app&apos;s private rooms and cloud computer capabilities.
           </h1>
-          <p className="text-xl text-slate-700 dark:text-slate-400">
+          <p className="text-sm md:text-xl text-slate-700 dark:text-slate-400">
             Experience seamless streaming of cloud computers in private rooms with our cutting-edge app, unlocking unlimited possibilities for watching anything, anytime, anywhere.
           </p>
         </div>
-        <p className="my-3 text-sm text-slate-500 dark:text-slate-400">
+        <p className="my-3 text-xs md:text-sm text-slate-500 dark:text-slate-400">
           You are looking at an early preview. You can follow the progress on
           <a href="https://github.com/Trannosaurus/AnonPlay"> <u>Github</u></a>.
         </p>

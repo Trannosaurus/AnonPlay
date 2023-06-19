@@ -121,7 +121,7 @@ export default function RoomPage({ params }: { params: any }) {
                     ${username === chat.username}`}>
                                     {chat.username}
                                 </p>
-                                <div className={`px-3 py-2 rounded-lg max-w-xs w-fit 
+                                <div className={`px-3 py-2 rounded-lg w-fit 
                     ${username === chat.username ? "bg-blue-400" : "bg-gray-400"}`}>
                                     <p className='overflow-x-hidden flex'>{chat.message}</p>
                                 </div>
