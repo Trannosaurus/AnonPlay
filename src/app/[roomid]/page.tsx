@@ -94,7 +94,7 @@ export default function RoomPage({ params }: { params: any }) {
     return (
         <div className="overflow-y-auto flex flex-col md:flex-row h-full w-full">
             <iframe className="w-full h-full" src={url} />
-            <div className="overflow-y-auto flex flex-col h-full w-full md:w-[360px] bg-slate-50">
+            <div className="landscape:hidden landscape:lg:flex overflow-y-auto flex flex-col h-full w-full md:w-[360px] bg-slate-50">
                 <div className='p-3 bg-slate-100'>
                     <h4 className="text-sm font-medium leading-none">Users Online: {onlineUsersCount}</h4>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
