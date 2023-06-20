@@ -12,7 +12,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body>
           <div className='flex flex-col h-full w-full'>
-            <div className='flex justify-between items-center p-2 bg-slate-200'>
+            <div className='landscape:hidden landscape:lg:flex flex justify-between items-center p-2 bg-slate-200'>
                 <h3 className="ml-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                     AnonPlay
                 </h3>
